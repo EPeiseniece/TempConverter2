@@ -35,13 +35,32 @@ class TemperatureViewController: UIViewController {
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        updateTemperatureLabelForSlider(value: temperatureSlider.value)
     }
     
     func updateTemperatureLabelForSlider (value: Float){
         let celsiusTemp = Int(value)
         celciusLabel.text = "\(celsiusTemp)ºC"
         
+        var convertedTempString = ""
+        switch temperatureSegmentControl.selectedSegmentIndex {
+        case 0:
+            let farenheitTempString = String(format: "%.2F", convertTempFrom(celsius: celsiusTemp).farenheit)
+            convertedTempString = farenheitTempString +
+            " ºF"
+        default:
+            let kelvinTempString = String(format: "%.2F", convertTempFrom(celsius: celsiusTemp).kelvin)
+            convertedTempString = kelvinTempString +
+            " ºK"
+        }
+        convertedTemperatureLabel.text = convertedTempString
     }
+    func convertTempFrom(celsius: Int)-> (farenheit: Double, kelvin: Double){
+        let farenheit = (Double(celsius) * 9 / 5) + 32
+        let kelvin = Double(celsius) + 273.15
+        return (farenheit, kelvin)
+    }
+    
     
 }
 

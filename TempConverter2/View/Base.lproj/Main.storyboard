@@ -42,6 +42,7 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="X6T-qh-fbc">
                                 <rect key="frame" x="32" y="509" width="350" height="30"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Ts0-G1-d47"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="306" id="U3Z-wb-ZT1"/>

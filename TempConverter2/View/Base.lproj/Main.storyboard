@@ -20,21 +20,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-O5-eTM">
                                 <rect key="frame" x="0.0" y="-13" width="414" height="909"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 ºF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRG-9f-oy7">
-                                <rect key="frame" x="182" y="606" width="50" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="JSd-cT-fRT"/>
-                                    <constraint firstAttribute="height" constant="26" id="cZ5-pO-ofr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ºC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-SL-SAh">
                                 <rect key="frame" x="186" y="431" width="42" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="3WA-pR-lcI"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="PLr-IS-YWz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 ºF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRG-9f-oy7">
+                                <rect key="frame" x="182" y="606" width="50" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="JSd-cT-fRT"/>
+                                    <constraint firstAttribute="height" constant="26" id="cZ5-pO-ofr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="23"/>
                                 <nil key="textColor"/>
@@ -50,6 +50,9 @@
                                 <imageReference key="maximumValueImage" image="sun.max" catalog="system" symbolScale="large"/>
                                 <color key="minimumTrackTintColor" systemColor="labelColor"/>
                                 <color key="thumbTintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="adX-c4-0ju"/>
+                                </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-qI-u5p">
                                 <rect key="frame" x="34.666666666666657" y="811" width="345" height="32"/>
@@ -62,6 +65,9 @@
                                     <segment title="Kelvin"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JA9-8u-meb"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature converter from ºC to ºF and ºK" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seA-7L-jB7">
                                 <rect key="frame" x="54" y="140" width="306" height="259"/>
@@ -97,6 +103,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TempConverter" id="IHT-NO-kqt"/>
+                    <connections>
+                        <outlet property="celciusLabel" destination="wG4-SL-SAh" id="8mS-Po-vUs"/>
+                        <outlet property="convertedTemperatureLabel" destination="iRG-9f-oy7" id="iSS-EP-ont"/>
+                        <outlet property="temperatureSegmentControl" destination="EIv-qI-u5p" id="z1Z-in-Hfe"/>
+                        <outlet property="temperatureSlider" destination="X6T-qh-fbc" id="1aU-iI-n7f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

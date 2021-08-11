@@ -13,6 +13,8 @@
 		EA26051326C3D1F400F8AE48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA26051126C3D1F400F8AE48 /* Main.storyboard */; };
 		EA26051526C3D20800F8AE48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA26051426C3D20800F8AE48 /* Assets.xcassets */; };
 		EA26051826C3D20800F8AE48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA26051626C3D20800F8AE48 /* LaunchScreen.storyboard */; };
+		EA26052326C3E39200F8AE48 /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26052226C3E39200F8AE48 /* AppearanceViewController.swift */; };
+		EA26052526C3E3A000F8AE48 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26052426C3E3A000F8AE48 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EA26051426C3D20800F8AE48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA26051726C3D20800F8AE48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA26051926C3D20800F8AE48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA26052226C3E39200F8AE48 /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
+		EA26052426C3E3A000F8AE48 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				EA26050F26C3D1F400F8AE48 /* TemperatureViewController.swift */,
+				EA26052226C3E39200F8AE48 /* AppearanceViewController.swift */,
+				EA26052426C3E3A000F8AE48 /* InfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,9 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA26052326C3E39200F8AE48 /* AppearanceViewController.swift in Sources */,
 				EA26051026C3D1F400F8AE48 /* TemperatureViewController.swift in Sources */,
 				EA26050C26C3D1F400F8AE48 /* AppDelegate.swift in Sources */,
 				EA26050E26C3D1F400F8AE48 /* SceneDelegate.swift in Sources */,
+				EA26052526C3E3A000F8AE48 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

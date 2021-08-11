@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZCV-TZ-Tek">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TemperatureViewController" customModule="TempConverter2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-O5-eTM">
-                                <rect key="frame" x="0.0" y="-13" width="414" height="909"/>
+                                <rect key="frame" x="0.0" y="-57" width="375" height="758"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ºC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-SL-SAh">
-                                <rect key="frame" x="186" y="431" width="42" height="26"/>
+                                <rect key="frame" x="166.5" y="236" width="42" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="3WA-pR-lcI"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="PLr-IS-YWz"/>
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 ºF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRG-9f-oy7">
-                                <rect key="frame" x="182" y="606" width="50" height="26"/>
+                                <rect key="frame" x="162.5" y="411" width="50" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="JSd-cT-fRT"/>
                                     <constraint firstAttribute="height" constant="26" id="cZ5-pO-ofr"/>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="X6T-qh-fbc">
-                                <rect key="frame" x="32" y="509" width="350" height="30"/>
+                                <rect key="frame" x="32" y="314" width="311" height="30"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Ts0-G1-d47"/>
@@ -56,7 +56,7 @@
                                 </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-qI-u5p">
-                                <rect key="frame" x="34.666666666666657" y="811" width="345" height="32"/>
+                                <rect key="frame" x="34.5" y="616" width="306" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="GWP-ii-PvC"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="306" id="iaq-RQ-Em7"/>
@@ -71,7 +71,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature converter from ºC to ºF and ºK" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seA-7L-jB7">
-                                <rect key="frame" x="54" y="140" width="306" height="259"/>
+                                <rect key="frame" x="34.5" y="96" width="306" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="108" id="3SQ-Ym-MLB"/>
                                     <constraint firstAttribute="width" constant="306" id="IHW-r7-83t"/>
@@ -103,7 +103,22 @@
                             <constraint firstItem="EIv-qI-u5p" firstAttribute="centerX" secondItem="WEb-O5-eTM" secondAttribute="centerX" id="wCL-Wy-9Pu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TempConverter" id="IHT-NO-kqt"/>
+                    <navigationItem key="navigationItem" title="TempConverter" id="IHT-NO-kqt">
+                        <barButtonItem key="leftBarButtonItem" image="info.circle.fill" catalog="system" id="s2K-ok-Ns9">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <segue destination="8ng-WP-2pt" kind="popoverPresentation" popoverAnchorBarButtonItem="s2K-ok-Ns9" id="aiu-I9-fGT">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="moon.circle.fill" catalog="system" id="hXD-JF-eMk">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <segue destination="jT1-Q9-Hh9" kind="show" id="hhz-sK-lzm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="celciusLabel" destination="wG4-SL-SAh" id="8mS-Po-vUs"/>
                         <outlet property="convertedTemperatureLabel" destination="iRG-9f-oy7" id="iSS-EP-ont"/>
@@ -115,13 +130,74 @@
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="112.5"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="phb-e3-GVV">
+            <objects>
+                <viewController id="8ng-WP-2pt" customClass="InfoViewController" customModule="TempConverter2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tDG-FV-WLX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xe7-je-s8h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KNA-fS-DWp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEK-XQ-deL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="802"/>
+        </scene>
+        <!--Appearance View Controller-->
+        <scene sceneID="kG9-UI-VyD">
+            <objects>
+                <viewController id="jT1-Q9-Hh9" customClass="AppearanceViewController" customModule="TempConverter2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Y5-BT-dzP" customClass="App">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K6F-aw-qHm">
+                                <rect key="frame" x="84" y="275.5" width="207" height="116"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light Mode is On Go to settings if you like to change to dark mode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sj9-OK-wAi">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="78"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="78" id="49F-G7-ArN"/>
+                                            <constraint firstAttribute="width" constant="207" id="wqV-PU-qK4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6X-wo-Xap">
+                                        <rect key="frame" x="54.5" y="86" width="98" height="30"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <state key="normal" title="Go to Settings">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                            <color key="titleShadowColor" systemColor="linkColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LIf-Tn-KVg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K6F-aw-qHm" firstAttribute="centerX" secondItem="4Y5-BT-dzP" secondAttribute="centerX" id="ddB-mk-9Xp"/>
+                            <constraint firstItem="K6F-aw-qHm" firstAttribute="centerY" secondItem="4Y5-BT-dzP" secondAttribute="centerY" id="e5z-Ch-GIf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="W0d-sH-6OD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLQ-pn-CFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.8" y="111.99400299850076"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="TVL-Qs-Jlw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZCV-TZ-Tek" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZM3-Tj-OmI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -135,11 +211,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="moon.circle.fill" catalog="system" width="128" height="121"/>
         <image name="sun" width="375" height="667"/>
         <image name="sun.max" catalog="system" width="128" height="124"/>
         <image name="sun.min" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

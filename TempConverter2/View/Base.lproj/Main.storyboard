@@ -107,7 +107,7 @@
                         <barButtonItem key="leftBarButtonItem" image="info.circle.fill" catalog="system" id="s2K-ok-Ns9">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <segue destination="8ng-WP-2pt" kind="popoverPresentation" popoverAnchorBarButtonItem="s2K-ok-Ns9" id="aiu-I9-fGT">
+                                <segue destination="8ng-WP-2pt" kind="popoverPresentation" identifier="infoPannel" popoverAnchorBarButtonItem="s2K-ok-Ns9" id="aiu-I9-fGT">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -137,14 +137,61 @@
                     <view key="view" contentMode="scaleToFill" id="tDG-FV-WLX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="0BT-zk-42E">
+                                <rect key="frame" x="53.5" y="118" width="268" height="411"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This was a homework task to create an app that converts temperature from Celsius to Farenheit or Kelvin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5y-gM-qgM">
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="121" id="Mw5-lS-Mk2"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="268" id="XHZ-fh-gWs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current calculation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-Xw-LP1">
+                                        <rect key="frame" x="0.0" y="178" width="268" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="268" id="M1w-8Y-vkP"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="mKh-p7-cF7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formula" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfm-bJ-eOa">
+                                        <rect key="frame" x="0.0" y="315" width="268" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="268" id="dLD-8s-2yX"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="96" id="tEI-mv-DlA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Xe7-je-s8h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0BT-zk-42E" firstAttribute="centerX" secondItem="tDG-FV-WLX" secondAttribute="centerX" id="FPX-dr-KnX"/>
+                            <constraint firstItem="Xe7-je-s8h" firstAttribute="trailing" secondItem="0BT-zk-42E" secondAttribute="trailing" constant="53.5" id="FSx-tH-5Ah"/>
+                            <constraint firstItem="0BT-zk-42E" firstAttribute="centerY" secondItem="tDG-FV-WLX" secondAttribute="centerY" id="mIH-Hl-f7h"/>
+                            <constraint firstItem="0BT-zk-42E" firstAttribute="leading" secondItem="Xe7-je-s8h" secondAttribute="leading" constant="53.5" id="y05-uf-K77"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KNA-fS-DWp"/>
+                    <connections>
+                        <outlet property="calculatedValueLabel" destination="gAS-Xw-LP1" id="4TW-1y-v4F"/>
+                        <outlet property="formulaLabel" destination="Hfm-bJ-eOa" id="vhE-Sp-3T4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEK-XQ-deL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="802"/>
+            <point key="canvasLocation" x="1037.5999999999999" y="801.94902548725645"/>
         </scene>
         <!--Appearance View Controller-->
         <scene sceneID="kG9-UI-VyD">
@@ -174,6 +221,9 @@
                                             <color key="titleColor" systemColor="labelColor"/>
                                             <color key="titleShadowColor" systemColor="linkColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="settingsButtonTapped:" destination="jT1-Q9-Hh9" eventType="touchUpInside" id="VAT-w2-Pb8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -186,6 +236,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W0d-sH-6OD"/>
+                    <connections>
+                        <outlet property="textLabel" destination="Sj9-OK-wAi" id="jAy-Z9-qaC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLQ-pn-CFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

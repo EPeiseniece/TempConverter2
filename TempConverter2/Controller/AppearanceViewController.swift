@@ -9,12 +9,15 @@ import UIKit
 
 class AppearanceViewController: UIViewController {
 
+    @IBOutlet weak var textLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setLabelText()
         // Do any additional setup after loading the view.
     }
-  /*  func setLabelText(){
+func setLabelText(){
         var text = "Unable to specify UI style"
         if traitCollection.userInterfaceStyle == .dark{
             text = "Dark Mode is On\n Go to settings if you like \n to change to light mode"
@@ -23,8 +26,25 @@ class AppearanceViewController: UIViewController {
         }
         textLabel.text = text
        
+     }
+    
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+        openSettings()
     }
-     */
+    
+    func openSettings(){
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(settingsURL){
+            UIApplication.shared.open(settingsURL, options: [:]) { success in
+                print("success: ",success)
+            }
+        }
+    }
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setLabelText()
+    }
     /*
     // MARK: - Navigation
 

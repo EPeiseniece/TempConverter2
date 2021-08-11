@@ -38,20 +38,26 @@ class TemperatureViewController: UIViewController {
         updateTemperatureLabelForSlider(value: temperatureSlider.value)
     }
     
+    var convertedTempString = ""
+    var transferCelsius = ""
+    var temperatureName = ""
     func updateTemperatureLabelForSlider (value: Float){
         let celsiusTemp = Int(value)
         celciusLabel.text = "\(celsiusTemp)ºC"
+        transferCelsius = "\(celsiusTemp)ºC"
         
-        var convertedTempString = ""
+        
         switch temperatureSegmentControl.selectedSegmentIndex {
         case 0:
             let farenheitTempString = String(format: "%.2F", convertTempFrom(celsius: celsiusTemp).farenheit)
             convertedTempString = farenheitTempString +
             " ºF"
+            temperatureName = "Farenheit"
         default:
             let kelvinTempString = String(format: "%.2F", convertTempFrom(celsius: celsiusTemp).kelvin)
             convertedTempString = kelvinTempString +
             " ºK"
+            temperatureName = "Kelvin"
         }
         convertedTemperatureLabel.text = convertedTempString
     }
@@ -60,6 +66,28 @@ class TemperatureViewController: UIViewController {
         let kelvin = Double(celsius) + 273.15
         return (farenheit, kelvin)
     }
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "infoPannel"{
+            // Get the new view controller using segue.destination.
+            let vc = segue.destination as! InfoViewController
+            
+            // Pass the selected object to the new view controller.
+            
+            vc.celsiusTemperature = transferCelsius
+            vc.convertedTemperature = convertedTempString
+            vc.temperatureIndicator = temperatureName
+            
+        }
+        
+        
+    }
+    
+    
     
     
 }

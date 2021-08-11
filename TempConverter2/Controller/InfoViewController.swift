@@ -9,9 +9,19 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    @IBOutlet weak var calculatedValueLabel: UILabel!
+    @IBOutlet weak var formulaLabel: UILabel!
+    
+    var celsiusTemperature = ""
+    var convertedTemperature = ""
+    var temperatureIndicator = ""
+    let formulaExplanation = "To make the calculations\n these are the formulas:\n ºC*9/5+32 = ºF\n ºC +273.15 = ºK"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        formulaLabel.text = formulaExplanation
+        calculatedValueLabel.text = "By converting \(celsiusTemperature) into \(temperatureIndicator),\n you get \(convertedTemperature)"
         // Do any additional setup after loading the view.
     }
     

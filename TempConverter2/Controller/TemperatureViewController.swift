@@ -30,11 +30,18 @@ class TemperatureViewController: UIViewController {
     }
 
     @IBAction func sliderValueChanged(_ sender: Any) {
+        print("tempslider", temperatureSlider.value)
+        updateTemperatureLabelForSlider(value: temperatureSlider.value)
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
     }
     
+    func updateTemperatureLabelForSlider (value: Float){
+        let celsiusTemp = Int(value)
+        celciusLabel.text = "\(celsiusTemp)ºC"
+        
+    }
     
 }
 
